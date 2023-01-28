@@ -15,6 +15,8 @@ public class frmAdministrador extends javax.swing.JFrame {
      */
     public frmAdministrador() {
         initComponents();
+        this.setLocationRelativeTo(null);
+
     }
 
     /**
@@ -35,6 +37,7 @@ public class frmAdministrador extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-izquierda-círculo-60.png"))); // NOI18N
