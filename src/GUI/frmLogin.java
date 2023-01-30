@@ -16,6 +16,7 @@ public class frmLogin extends javax.swing.JFrame {
     /**
      * Creates new form frmLogin
      */
+    
     public frmLogin() {
         initComponents();
         setLocationRelativeTo(null);
@@ -33,102 +34,91 @@ public class frmLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        fondo = new javax.swing.JPanel();
+        lblBienvenido = new javax.swing.JLabel();
+        lblSelecciona = new javax.swing.JLabel();
+        lblAdmin = new javax.swing.JLabel();
+        lblUser = new javax.swing.JLabel();
+        lblInvitado = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        lblBienvenido = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-configuración-del-administrador-96.png"))); // NOI18N
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-usuario-90.png"))); // NOI18N
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel2.setPreferredSize(new java.awt.Dimension(96, 96));
-
-        jLabel3.setFont(new java.awt.Font("Lucida Fax", 1, 18)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-invitado-masculino-96.png"))); // NOI18N
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel4.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Administrador");
-
-        jLabel5.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Usuario");
-
-        jLabel6.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Invitado");
+        fondo.setBackground(new java.awt.Color(255, 255, 255));
+        fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblBienvenido.setFont(new java.awt.Font("Lucida Fax", 1, 36)); // NOI18N
         lblBienvenido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblBienvenido.setText("Bienvenido");
         lblBienvenido.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        fondo.add(lblBienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(162, 6, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
-        jLabel7.setText("Selecciona una opción:");
+        lblSelecciona.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
+        lblSelecciona.setText("Selecciona una opción:");
+        fondo.add(lblSelecciona, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 60, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 41, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(60, 60, 60))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(162, 162, 162)
-                        .addComponent(lblBienvenido))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(198, 198, 198)
-                        .addComponent(jLabel7)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblBienvenido)
-                .addGap(11, 11, 11)
-                .addComponent(jLabel7)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
-                .addContainerGap(34, Short.MAX_VALUE))
-        );
+        lblAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-configuración-del-administrador-96.png"))); // NOI18N
+        lblAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAdminMouseClicked(evt);
+            }
+        });
+        fondo.add(lblAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 93, 112, 116));
+
+        lblUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-usuario-90.png"))); // NOI18N
+        lblUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblUser.setPreferredSize(new java.awt.Dimension(96, 96));
+        lblUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblUserMouseClicked(evt);
+            }
+        });
+        fondo.add(lblUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 93, 113, 116));
+
+        lblInvitado.setFont(new java.awt.Font("Lucida Fax", 1, 18)); // NOI18N
+        lblInvitado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblInvitado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-invitado-masculino-96.png"))); // NOI18N
+        lblInvitado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        fondo.add(lblInvitado, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 93, 113, 116));
+
+        jLabel4.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Administrador");
+        fondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 221, 112, -1));
+
+        jLabel5.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Usuario");
+        fondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 221, 113, -1));
+
+        jLabel6.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Invitado");
+        fondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 221, 113, -1));
+
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 270));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lblAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAdminMouseClicked
+        this.setVisible(false);
+        frmAdministrador admin = new frmAdministrador();
+        admin.setVisible(true);
+    }//GEN-LAST:event_lblAdminMouseClicked
+
+    private void lblUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUserMouseClicked
+        this.setVisible(false);
+        frmUsuario user = new frmUsuario();
+        user.setVisible(true);
+    }//GEN-LAST:event_lblUserMouseClicked
 
     /**
      * @param args the command line arguments
@@ -166,13 +156,14 @@ public class frmLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel fondo;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel lblAdmin;
     private javax.swing.JLabel lblBienvenido;
+    private javax.swing.JLabel lblInvitado;
+    private javax.swing.JLabel lblSelecciona;
+    private javax.swing.JLabel lblUser;
     // End of variables declaration//GEN-END:variables
 }
