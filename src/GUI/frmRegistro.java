@@ -53,8 +53,8 @@ public class frmRegistro extends javax.swing.JFrame {
         lblRegistroUsuario = new javax.swing.JLabel();
         lblRegistrarse = new javax.swing.JToggleButton();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        rbtMujer = new javax.swing.JRadioButton();
+        rbtHombre = new javax.swing.JRadioButton();
         Personalizado = new javax.swing.JRadioButton();
         txtEscribirG = new javax.swing.JTextField();
 
@@ -232,16 +232,26 @@ public class frmRegistro extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Soltero", "Casado", "Divorciado" }));
         fondo.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 110, -1));
 
-        jRadioButton1.setText("Mujer");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+        rbtMujer.setText("Mujer");
+        rbtMujer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbtMujerMouseClicked(evt);
             }
         });
-        fondo.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 70, -1));
+        rbtMujer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtMujerActionPerformed(evt);
+            }
+        });
+        fondo.add(rbtMujer, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 70, -1));
 
-        jRadioButton2.setText("Hombre");
-        fondo.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, -1, -1));
+        rbtHombre.setText("Hombre");
+        rbtHombre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbtHombreMouseClicked(evt);
+            }
+        });
+        fondo.add(rbtHombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, -1, -1));
 
         Personalizado.setText("Personalizado");
         Personalizado.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -324,9 +334,9 @@ public class frmRegistro extends javax.swing.JFrame {
         user.setVisible(true);
     }//GEN-LAST:event_lblFlechaMouseClicked
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void rbtMujerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtMujerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_rbtMujerActionPerformed
 
     private void txtEscribirGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEscribirGActionPerformed
            // TODO add your handling code here:
@@ -339,8 +349,27 @@ public class frmRegistro extends javax.swing.JFrame {
     }//GEN-LAST:event_PersonalizadoActionPerformed
 
     private void PersonalizadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PersonalizadoMouseClicked
-       txtEscribirG.setVisible(true); // TODO add your handling code here:
+       rbtMujer.setSelected(false);
+       rbtHombre.setSelected(false);
+        txtEscribirG.setVisible(true);
+       
+       
+       // TODO add your handling code here:
     }//GEN-LAST:event_PersonalizadoMouseClicked
+
+    private void rbtHombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtHombreMouseClicked
+        txtEscribirG.setVisible(false);
+        Personalizado.setSelected(false);
+        rbtMujer.setSelected(false);
+       // TODO add your handling code here:
+    }//GEN-LAST:event_rbtHombreMouseClicked
+
+    private void rbtMujerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtMujerMouseClicked
+        txtEscribirG.setVisible(false);
+        rbtHombre.setSelected(false);
+        Personalizado.setSelected(false);// TODO add your handling code here:
+       
+    }//GEN-LAST:event_rbtMujerMouseClicked
 
     /**
      * @param args the command line arguments
@@ -381,8 +410,6 @@ public class frmRegistro extends javax.swing.JFrame {
     public static javax.swing.JRadioButton Personalizado;
     public static javax.swing.JPanel fondo;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lblAnio;
     private javax.swing.JLabel lblCedula;
@@ -400,6 +427,8 @@ public class frmRegistro extends javax.swing.JFrame {
     private javax.swing.JLabel lblSegundoNombre;
     private javax.swing.JLabel lblSexo;
     private javax.swing.JLabel lblTelefono;
+    private javax.swing.JRadioButton rbtHombre;
+    private javax.swing.JRadioButton rbtMujer;
     private javax.swing.JTextField txtAnio;
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtDia;
