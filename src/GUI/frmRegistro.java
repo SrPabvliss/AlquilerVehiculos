@@ -4,10 +4,7 @@
  */
 package GUI;
 
-/**
- *
- * @author Det-Pc
- */
+// ARREGLAR LA SELECCION DE SEXO Y QUE APAREZCA SOLAMENTE CUANDO SE APALSTE PERSONALIZADO Y NO ELEGIR MAS DE UNO
 public class frmRegistro extends javax.swing.JFrame {
 
     /**
@@ -15,6 +12,7 @@ public class frmRegistro extends javax.swing.JFrame {
      */
     public frmRegistro() {
         initComponents();
+        txtEscribirG.setVisible(false);
     }
 
     /**
@@ -40,12 +38,8 @@ public class frmRegistro extends javax.swing.JFrame {
         txtSegundoApellido = new javax.swing.JTextField();
         lblTelefono = new javax.swing.JLabel();
         txtTelefono1 = new javax.swing.JTextField();
-        lblEdad = new javax.swing.JLabel();
-        txtEdad1 = new javax.swing.JTextField();
         lblSexo = new javax.swing.JLabel();
-        txtSexo = new javax.swing.JTextField();
         lblEstadoCivil = new javax.swing.JLabel();
-        txtEstadoCivil = new javax.swing.JTextField();
         lblFechaNacimiento = new javax.swing.JLabel();
         lblDia = new javax.swing.JLabel();
         txtDia = new javax.swing.JTextField();
@@ -58,6 +52,11 @@ public class frmRegistro extends javax.swing.JFrame {
         lblFlecha = new javax.swing.JLabel();
         lblRegistroUsuario = new javax.swing.JLabel();
         lblRegistrarse = new javax.swing.JToggleButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        Personalizado = new javax.swing.JRadioButton();
+        txtEscribirG = new javax.swing.JTextField();
 
         jTextField3.setPreferredSize(new java.awt.Dimension(150, 20));
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
@@ -147,41 +146,13 @@ public class frmRegistro extends javax.swing.JFrame {
         });
         fondo.add(txtTelefono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, -1, -1));
 
-        lblEdad.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
-        lblEdad.setText("Edad:");
-        fondo.add(lblEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 76, -1, -1));
-
-        txtEdad1.setPreferredSize(new java.awt.Dimension(110, 30));
-        txtEdad1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEdad1ActionPerformed(evt);
-            }
-        });
-        fondo.add(txtEdad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(429, 72, -1, -1));
-
         lblSexo.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
         lblSexo.setText("Sexo:");
-        fondo.add(lblSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 116, -1, 20));
-
-        txtSexo.setPreferredSize(new java.awt.Dimension(110, 30));
-        txtSexo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSexoActionPerformed(evt);
-            }
-        });
-        fondo.add(txtSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, -1, -1));
+        fondo.add(lblSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, -1, 20));
 
         lblEstadoCivil.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
         lblEstadoCivil.setText("Estado Civil:");
         fondo.add(lblEstadoCivil, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 156, -1, -1));
-
-        txtEstadoCivil.setPreferredSize(new java.awt.Dimension(110, 30));
-        txtEstadoCivil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEstadoCivilActionPerformed(evt);
-            }
-        });
-        fondo.add(txtEstadoCivil, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, -1, -1));
 
         lblFechaNacimiento.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
         lblFechaNacimiento.setText("Fecha de nacimiento:");
@@ -258,6 +229,41 @@ public class frmRegistro extends javax.swing.JFrame {
         });
         fondo.add(lblRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, -1, -1));
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Soltero", "Casado", "Divorciado" }));
+        fondo.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 110, -1));
+
+        jRadioButton1.setText("Mujer");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+        fondo.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 70, -1));
+
+        jRadioButton2.setText("Hombre");
+        fondo.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, -1, -1));
+
+        Personalizado.setText("Personalizado");
+        Personalizado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PersonalizadoMouseClicked(evt);
+            }
+        });
+        Personalizado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PersonalizadoActionPerformed(evt);
+            }
+        });
+        fondo.add(Personalizado, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, -1, -1));
+
+        txtEscribirG.setToolTipText("Genero (Opcional)");
+        txtEscribirG.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEscribirGActionPerformed(evt);
+            }
+        });
+        fondo.add(txtEscribirG, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 260, -1));
+
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -267,10 +273,6 @@ public class frmRegistro extends javax.swing.JFrame {
     private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDireccionActionPerformed
-
-    private void txtEstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEstadoCivilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEstadoCivilActionPerformed
 
     private void txtAnioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAnioActionPerformed
         // TODO add your handling code here:
@@ -300,14 +302,6 @@ public class frmRegistro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSegundoApellidoActionPerformed
 
-    private void txtEdad1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEdad1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEdad1ActionPerformed
-
-    private void txtSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSexoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSexoActionPerformed
-
     private void txtMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMesActionPerformed
@@ -329,6 +323,24 @@ public class frmRegistro extends javax.swing.JFrame {
         frmUsuario user = new frmUsuario();
         user.setVisible(true);
     }//GEN-LAST:event_lblFlechaMouseClicked
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void txtEscribirGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEscribirGActionPerformed
+           // TODO add your handling code here:
+    }//GEN-LAST:event_txtEscribirGActionPerformed
+
+    private void PersonalizadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PersonalizadoActionPerformed
+        
+       
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PersonalizadoActionPerformed
+
+    private void PersonalizadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PersonalizadoMouseClicked
+       txtEscribirG.setVisible(true); // TODO add your handling code here:
+    }//GEN-LAST:event_PersonalizadoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -366,13 +378,16 @@ public class frmRegistro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel fondo;
+    public static javax.swing.JRadioButton Personalizado;
+    public static javax.swing.JPanel fondo;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lblAnio;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblDia;
     private javax.swing.JLabel lblDireccion;
-    private javax.swing.JLabel lblEdad;
     private javax.swing.JLabel lblEstadoCivil;
     private javax.swing.JLabel lblFechaNacimiento;
     private javax.swing.JLabel lblFlecha;
@@ -389,14 +404,12 @@ public class frmRegistro extends javax.swing.JFrame {
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtDia;
     private javax.swing.JTextField txtDireccion;
-    private javax.swing.JTextField txtEdad1;
-    private javax.swing.JTextField txtEstadoCivil;
+    public static javax.swing.JTextField txtEscribirG;
     private javax.swing.JTextField txtMes;
     private javax.swing.JTextField txtPrimerApellido;
     private javax.swing.JTextField txtPrimerNombre;
     private javax.swing.JTextField txtSegundoApellido;
     private javax.swing.JTextField txtSegundoNombre;
-    private javax.swing.JTextField txtSexo;
     private javax.swing.JTextField txtTelefono1;
     // End of variables declaration//GEN-END:variables
 }
