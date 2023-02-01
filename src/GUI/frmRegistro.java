@@ -5,6 +5,9 @@
 package GUI;
 
 // ARREGLAR LA SELECCION DE SEXO Y QUE APAREZCA SOLAMENTE CUANDO SE APALSTE PERSONALIZADO Y NO ELEGIR MAS DE UNO
+import com.formdev.flatlaf.FlatLightLaf;
+import javax.swing.UIManager;
+
 public class frmRegistro extends javax.swing.JFrame {
 
     /**
@@ -339,72 +342,55 @@ public class frmRegistro extends javax.swing.JFrame {
     }//GEN-LAST:event_rbtMujerActionPerformed
 
     private void txtEscribirGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEscribirGActionPerformed
-           // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_txtEscribirGActionPerformed
 
     private void PersonalizadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PersonalizadoActionPerformed
-        
-       
+
         // TODO add your handling code here:
     }//GEN-LAST:event_PersonalizadoActionPerformed
 
     private void PersonalizadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PersonalizadoMouseClicked
-       rbtMujer.setSelected(false);
-       rbtHombre.setSelected(false);
+        rbtMujer.setSelected(false);
+        rbtHombre.setSelected(false);
         txtEscribirG.setVisible(true);
-       
-       
-       // TODO add your handling code here:
+
+        // TODO add your handling code here:
     }//GEN-LAST:event_PersonalizadoMouseClicked
 
     private void rbtHombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtHombreMouseClicked
         txtEscribirG.setVisible(false);
         Personalizado.setSelected(false);
         rbtMujer.setSelected(false);
-       // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_rbtHombreMouseClicked
 
     private void rbtMujerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtMujerMouseClicked
         txtEscribirG.setVisible(false);
         rbtHombre.setSelected(false);
         Personalizado.setSelected(false);// TODO add your handling code here:
-       
+
     }//GEN-LAST:event_rbtMujerMouseClicked
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new frmRegistro().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+////        FlatLightLaf.setup();
+////        UIManager.put("Button.arc", 999);
+////        UIManager.put("Component.arc", 999);
+////        UIManager.put("ProgressBar.arc", 999);
+////        UIManager.put("TextComponent.arc", 999);
+////        
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new frmRegistro().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JRadioButton Personalizado;

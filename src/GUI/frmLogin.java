@@ -4,8 +4,12 @@
  */
 package GUI;
 
+import com.formdev.flatlaf.FlatLightLaf;
+import com.formdev.flatlaf.intellijthemes.FlatMaterialDesignDarkIJTheme;
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialLighterIJTheme;
 import java.awt.Color;
 import javax.swing.JFrame;
+import javax.swing.UIManager;
 
 /**
  *
@@ -16,13 +20,11 @@ public class frmLogin extends javax.swing.JFrame {
     /**
      * Creates new form frmLogin
      */
-    
     public frmLogin() {
         initComponents();
         setLocationRelativeTo(null);
 //        PanelFondo.setBackground(new Color(254, 176, 85));
-    
-        
+
     }
 
     /**
@@ -86,6 +88,11 @@ public class frmLogin extends javax.swing.JFrame {
         lblInvitado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblInvitado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-invitado-masculino-96.png"))); // NOI18N
         lblInvitado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblInvitado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblInvitadoMouseClicked(evt);
+            }
+        });
         fondo.add(lblInvitado, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 93, 113, 116));
 
         jLabel4.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
@@ -120,32 +127,24 @@ public class frmLogin extends javax.swing.JFrame {
         user.setVisible(true);
     }//GEN-LAST:event_lblUserMouseClicked
 
+    private void lblInvitadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInvitadoMouseClicked
+        mdiInvitado invitado = new mdiInvitado();
+        this.setVisible(false);
+        invitado.setVisible(true);
+    }//GEN-LAST:event_lblInvitadoMouseClicked
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+        
+       
+        FlatMaterialLighterIJTheme.setup();
+        UIManager.put("Button.arc", 999);
+        UIManager.put("Component.arc", 999);
+        UIManager.put("ProgressBar.arc", 999);
+        UIManager.put("TextComponent.arc", 999);
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
