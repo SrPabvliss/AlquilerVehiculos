@@ -23,7 +23,7 @@ public class frmLogin extends javax.swing.JFrame {
     public frmLogin() {
         initComponents();
         setLocationRelativeTo(null);
-//        PanelFondo.setBackground(new Color(254, 176, 85));
+        fondo.setBackground(new Color(253, 240, 213));
 
     }
 
