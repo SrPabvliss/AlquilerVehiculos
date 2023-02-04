@@ -16,6 +16,7 @@ public class frmRegistro extends javax.swing.JFrame {
     public frmRegistro() {
         initComponents();
         txtEscribirG.setVisible(false);
+        
     }
 
     /**
@@ -232,7 +233,7 @@ public class frmRegistro extends javax.swing.JFrame {
         });
         fondo.add(lblRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Soltero", "Casado", "Divorciado" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Soltero", "Casado", "Divorciado", "Viudo" }));
         fondo.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 110, -1));
 
         rbtMujer.setText("Mujer");
@@ -277,7 +278,7 @@ public class frmRegistro extends javax.swing.JFrame {
         });
         fondo.add(txtEscribirG, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 260, -1));
 
-        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 700, 400));
 
         pack();
         setLocationRelativeTo(null);

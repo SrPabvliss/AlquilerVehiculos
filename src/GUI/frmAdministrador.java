@@ -4,21 +4,29 @@
  */
 package GUI;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Det-Pc
  */
 public class frmAdministrador extends javax.swing.JFrame {
-
+    
+    
+    
     /**
      * Creates new form frmAdministrador
      */
     public frmAdministrador() {
         initComponents();
         this.setLocationRelativeTo(null);
+         
+
 
     }
-
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,7 +43,7 @@ public class frmAdministrador extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         lblContrasenia = new javax.swing.JLabel();
         txtContrasenia = new javax.swing.JPasswordField();
-        btnIngresar = new javax.swing.JButton();
+        btnIngresoS = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -67,30 +75,86 @@ public class frmAdministrador extends javax.swing.JFrame {
         jPanel1.add(lblContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 177, -1, -1));
         jPanel1.add(txtContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 173, 152, -1));
 
-        btnIngresar.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
-        btnIngresar.setText("Ingresar");
-        btnIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+        btnIngresoS.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
+        btnIngresoS.setText("Ingresar");
+        btnIngresoS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIngresarActionPerformed(evt);
+                btnIngresoSActionPerformed(evt);
             }
         });
-        jPanel1.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 213, 109, -1));
+        jPanel1.add(btnIngresoS, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 100, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 270));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnIngresarActionPerformed
-
+    
+    
+    
     private void lblFlechaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFlechaMouseClicked
         this.setVisible(false);
         frmLogin login = new frmLogin();
         login.setVisible(true);
     }//GEN-LAST:event_lblFlechaMouseClicked
+
+    private void btnIngresoSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresoSActionPerformed
+        
+       String usuario = txtNombre.getText();
+       String contrasena = "";
+       String contr = "root";
+      
+       char [] password = txtContrasenia.getPassword();
+        for (int i = 0; i < password.length ; i++) {
+            contrasena +=  password [i];
+        }
+        
+        switch (usuario) {
+            case "Pablo":
+                if (contrasena.equals(contr)) {
+                    System.out.println("Ingreso correcto");
+                 this.setVisible(false);
+                 mdiAdministrador adm = new mdiAdministrador();
+                 adm.toFront();
+                 adm.show();    
+                }else
+                     JOptionPane.showMessageDialog(rootPane, "Clave Incorrecta");
+                    
+    
+                break;
+            case "Josue":
+                if (contrasena.equals(contr)) {
+                    System.out.println("Ingreso correcto");
+                 this.setVisible(false);
+                 mdiAdministrador adm = new mdiAdministrador();
+                 adm.toFront();
+                 adm.show();    
+                }else
+                     JOptionPane.showMessageDialog(rootPane, "Clave Incorrecta");
+                    
+    
+                break;
+                
+            case "Paulo":
+                if (contrasena.equals(contr)) {
+                    System.out.println("Ingreso correcto");
+                 this.setVisible(false);
+                 mdiAdministrador adm = new mdiAdministrador();
+                 adm.toFront();
+                 adm.show();    
+                }else
+                     JOptionPane.showMessageDialog(rootPane, "Clave Incorrecta");
+                    
+    
+                break;
+            default:
+                JOptionPane.showMessageDialog(rootPane, "Usuario Incorrecto");
+                System.out.println("Usuario Incorrecto");
+                
+        }
+        
+        
+    }//GEN-LAST:event_btnIngresoSActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,7 +192,7 @@ public class frmAdministrador extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnIngresar;
+    private javax.swing.JButton btnIngresoS;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblAdmin;
     private javax.swing.JLabel lblContrasenia;
