@@ -36,9 +36,10 @@ public class mdiAdministrador extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        menuBar.setPreferredSize(new java.awt.Dimension(300, 40));
+
         fileMenu.setMnemonic('f');
         fileMenu.setText("Agregrar");
-        fileMenu.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
 
         openMenuItem.setMnemonic('o');
         openMenuItem.setText("Open");
@@ -48,7 +49,6 @@ public class mdiAdministrador extends javax.swing.JFrame {
 
         editMenu.setMnemonic('e');
         editMenu.setText("Consultar");
-        editMenu.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
 
         deleteMenuItem.setMnemonic('d');
         deleteMenuItem.setText("Delete");
@@ -58,7 +58,6 @@ public class mdiAdministrador extends javax.swing.JFrame {
 
         mnuCerrar.setMnemonic('h');
         mnuCerrar.setText("Cerrar sesion");
-        mnuCerrar.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
         mnuCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 mnuCerrarMouseClicked(evt);

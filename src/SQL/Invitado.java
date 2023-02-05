@@ -14,6 +14,7 @@ public class Invitado {
         try {
             DefaultTableModel modelo = new DefaultTableModel();
             tbl.setModel(modelo);
+            tbl.setEnabled(false);
             PreparedStatement ps = null;
             ResultSet rs = null;
             Connection con = conn.conection();
@@ -47,7 +48,6 @@ public class Invitado {
                   
         } catch (SQLException ex) {
             Logger.getLogger(Invitado.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        }   
     }
 }

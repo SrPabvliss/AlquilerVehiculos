@@ -118,7 +118,7 @@ public class ifrmMostrarVehiculos extends javax.swing.JInternalFrame {
         getContentPane().add(txtFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 320, 20));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 320, 20));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel4.setText("Los inivtados no tienen permitido alquilar vehiculos*");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 240, -1));
 

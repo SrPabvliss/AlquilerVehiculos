@@ -4,7 +4,9 @@
  */
 package GUI;
 
+import SQL.Usuario;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,6 +17,10 @@ public class frmUsuario extends javax.swing.JFrame {
     /**
      * Creates new form frmUsuario
      */
+    
+    public Usuario user = new Usuario();
+    
+
     public frmUsuario() {
         initComponents();
     }
@@ -32,10 +38,10 @@ public class frmUsuario extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         lblFlecha = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        txtPasswd = new javax.swing.JPasswordField();
+        btnIngresar = new javax.swing.JButton();
         lblregistro = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,22 +68,30 @@ public class frmUsuario extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
         jLabel3.setText("Nombre:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 140, 63, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(222, 136, 152, -1));
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(222, 136, 152, -1));
 
         jLabel4.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
         jLabel4.setText("Contraseña:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 174, -1, -1));
-        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(222, 170, 152, -1));
+        jPanel1.add(txtPasswd, new org.netbeans.lib.awtextra.AbsoluteConstraints(222, 170, 152, -1));
 
-        jButton1.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
-        jButton1.setText("Ingresar");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        btnIngresar.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
+        btnIngresar.setText("Ingresar");
+        btnIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnIngresarMouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnIngresarMouseReleased(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 109, -1));
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 109, -1));
 
         lblregistro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblregistro.setText("No tienes cuenta? Regístrate");
@@ -101,15 +115,35 @@ public class frmUsuario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+             
+        mdiUsuario menuUsuario = new mdiUsuario();
+        
+        try {
+            String usuario = txtNombre.getText();
+            int psswd = Integer.parseInt(String.valueOf(txtPasswd.getPassword()));
+            int resultado = user.validarAcceso(usuario, psswd);
+            
+            if (resultado == 1) {
+                this.setVisible(false);
+                menuUsuario.setVisible(true);
+                System.out.println(psswd);
+                user.almacenarCedula(psswd);
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al iniciar sesion, vuelva a intentarlo");
+            }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "Error, asegurate de ingresar los datos correctos");
+        }
+        
+    }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void lblFlechaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFlechaMouseClicked
         this.setVisible(false);
         frmLogin login = new frmLogin();
         login.setVisible(true);
-                
+
     }//GEN-LAST:event_lblFlechaMouseClicked
 
     private void lblregistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblregistroMouseClicked
@@ -125,6 +159,15 @@ public class frmUsuario extends javax.swing.JFrame {
     private void lblregistroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblregistroMouseExited
         lblregistro.setForeground(Color.black);
     }//GEN-LAST:event_lblregistroMouseExited
+
+    private void btnIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarMouseClicked
+        
+    }//GEN-LAST:event_btnIngresarMouseClicked
+
+    private void btnIngresarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarMouseReleased
+
+    }//GEN-LAST:event_btnIngresarMouseReleased
+
 
     /**
      * @param args the command line arguments
@@ -162,14 +205,14 @@ public class frmUsuario extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnIngresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblFlecha;
     private javax.swing.JLabel lblregistro;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JPasswordField txtPasswd;
     // End of variables declaration//GEN-END:variables
 }
