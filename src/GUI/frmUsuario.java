@@ -18,7 +18,7 @@ public class frmUsuario extends javax.swing.JFrame {
      * Creates new form frmUsuario
      */
     
-    public Usuario user = new Usuario();
+    Usuario user = new Usuario();
     
 
     public frmUsuario() {
@@ -115,28 +115,27 @@ public class frmUsuario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-
+//    private String
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
              
         mdiUsuario menuUsuario = new mdiUsuario();
         
         try {
             String usuario = txtNombre.getText();
-            int psswd = Integer.parseInt(String.valueOf(txtPasswd.getPassword()));
+            String psswd = String.valueOf(txtPasswd.getPassword());
             int resultado = user.validarAcceso(usuario, psswd);
             
             if (resultado == 1) {
                 this.setVisible(false);
                 menuUsuario.setVisible(true);
                 System.out.println(psswd);
-                user.almacenarCedula(psswd);
+                UsuarioDatos.cedula = psswd;
             } else {
                 JOptionPane.showMessageDialog(null, "Error al iniciar sesion, vuelva a intentarlo");
             }
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Error, asegurate de ingresar los datos correctos");
-        }
-        
+        }   
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void lblFlechaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFlechaMouseClicked
