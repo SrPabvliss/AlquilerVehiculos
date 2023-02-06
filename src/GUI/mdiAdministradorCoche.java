@@ -181,6 +181,7 @@ public class mdiAdministradorCoche extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuCerrarMouseClicked
 
     private void mnuConsulta2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuConsulta2MouseClicked
+        
         ifrmConsultarVehiculos   vehiculo1 = new ifrmConsultarVehiculos();
         Escritorio.add(vehiculo1);
         vehiculo1.show();
