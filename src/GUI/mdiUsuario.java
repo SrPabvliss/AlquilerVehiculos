@@ -46,7 +46,6 @@ public class mdiUsuario extends javax.swing.JFrame {
         mnuConsulta.setMnemonic('f');
         mnuConsulta.setText("Consulta");
         mnuConsulta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mnuConsulta.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
         mnuConsulta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mnuConsulta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mnuConsulta.setMinimumSize(new java.awt.Dimension(70, 22));
@@ -61,7 +60,6 @@ public class mdiUsuario extends javax.swing.JFrame {
         mnuReserva.setMnemonic('e');
         mnuReserva.setText("Reservas");
         mnuReserva.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mnuReserva.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
         mnuReserva.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mnuReserva.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mnuReserva.setPreferredSize(new java.awt.Dimension(70, 22));
@@ -72,7 +70,6 @@ public class mdiUsuario extends javax.swing.JFrame {
         mnuCuenta.setAutoscrolls(true);
         mnuCuenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mnuCuenta.setDelay(130);
-        mnuCuenta.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
         mnuCuenta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mnuCuenta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mnuCuenta.setPreferredSize(new java.awt.Dimension(70, 32));
@@ -85,7 +82,6 @@ public class mdiUsuario extends javax.swing.JFrame {
 
         mnuCerrarSesion1.setText("Cerrar sesion");
         mnuCerrarSesion1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        mnuCerrarSesion1.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
         mnuCerrarSesion1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mnuCerrarSesion1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mnuCerrarSesion1.addMouseListener(new java.awt.event.MouseAdapter() {
