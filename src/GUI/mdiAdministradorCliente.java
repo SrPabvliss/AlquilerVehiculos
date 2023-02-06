@@ -111,7 +111,8 @@ public class mdiAdministradorCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_lblFlechaMouseClicked
 
     private void mnuAgrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuAgrMouseClicked
-       ifrmAgregarCliente agregar = new ifrmAgregarCliente();     
+       
+        ifrmAgregarCliente agregar = new ifrmAgregarCliente();     
        Escritorio1.add(agregar);
        agregar.toFront();
        agregar.show(); // TODO add your handling code here:

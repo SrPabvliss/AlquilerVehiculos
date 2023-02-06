@@ -21,7 +21,7 @@ public class RangoFecha {
         final String bd = "alquiler";
         final String URL = "jdbc:mysql://localhost:3306/";
         final String usuario = "root";
-        final String clave = "Villacres_04";
+        final String clave = "root";
         final String driver = "com.mysql.cj.jdbc.Driver";
         Connection con = null;
 
@@ -36,6 +36,7 @@ public class RangoFecha {
         //DESDE AQUI SERIA EL NUEVO METODO PARA USUARIO 
         int resultado = 0;
         Date fecha = new Date();
+        
         fecha.setDate(01);
         fecha.setYear(2023);
         fecha.setMonth(02);
