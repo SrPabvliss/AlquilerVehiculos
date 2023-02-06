@@ -5,6 +5,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
 
 public class Invitado {
    
@@ -14,7 +15,9 @@ public class Invitado {
         try {
             DefaultTableModel modelo = new DefaultTableModel();
             tbl.setModel(modelo);
+            tbl.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
             tbl.setEnabled(false);
+            
             PreparedStatement ps = null;
             ResultSet rs = null;
             Connection con = conn.conection();
