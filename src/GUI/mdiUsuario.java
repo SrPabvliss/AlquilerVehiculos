@@ -29,9 +29,9 @@ public class mdiUsuario extends javax.swing.JFrame {
 
         Escritorio = new javax.swing.JDesktopPane();
         menuBar = new javax.swing.JMenuBar();
-        fileMenu = new javax.swing.JMenu();
-        editMenu = new javax.swing.JMenu();
-        cuenta = new javax.swing.JMenu();
+        mnuConsulta = new javax.swing.JMenu();
+        mnuReserva = new javax.swing.JMenu();
+        mnuCuenta = new javax.swing.JMenu();
         mnuCerrarSesion1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,45 +43,49 @@ public class mdiUsuario extends javax.swing.JFrame {
 
         menuBar.setPreferredSize(new java.awt.Dimension(300, 40));
 
-        fileMenu.setMnemonic('f');
-        fileMenu.setText("Consulta");
-        fileMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        fileMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        fileMenu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        fileMenu.setMinimumSize(new java.awt.Dimension(70, 22));
-        fileMenu.setPreferredSize(new java.awt.Dimension(70, 22));
-        fileMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+        mnuConsulta.setMnemonic('f');
+        mnuConsulta.setText("Consulta");
+        mnuConsulta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mnuConsulta.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
+        mnuConsulta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mnuConsulta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mnuConsulta.setMinimumSize(new java.awt.Dimension(70, 22));
+        mnuConsulta.setPreferredSize(new java.awt.Dimension(70, 22));
+        mnuConsulta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                fileMenuMouseClicked(evt);
+                mnuConsultaMouseClicked(evt);
             }
         });
-        menuBar.add(fileMenu);
+        menuBar.add(mnuConsulta);
 
-        editMenu.setMnemonic('e');
-        editMenu.setText("Reservas");
-        editMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        editMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        editMenu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        editMenu.setPreferredSize(new java.awt.Dimension(70, 22));
-        menuBar.add(editMenu);
+        mnuReserva.setMnemonic('e');
+        mnuReserva.setText("Reservas");
+        mnuReserva.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mnuReserva.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
+        mnuReserva.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mnuReserva.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mnuReserva.setPreferredSize(new java.awt.Dimension(70, 22));
+        menuBar.add(mnuReserva);
 
-        cuenta.setMnemonic('h');
-        cuenta.setText("Cuenta");
-        cuenta.setAutoscrolls(true);
-        cuenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        cuenta.setDelay(130);
-        cuenta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        cuenta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        cuenta.setPreferredSize(new java.awt.Dimension(70, 32));
-        cuenta.addMouseListener(new java.awt.event.MouseAdapter() {
+        mnuCuenta.setMnemonic('h');
+        mnuCuenta.setText("Cuenta");
+        mnuCuenta.setAutoscrolls(true);
+        mnuCuenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mnuCuenta.setDelay(130);
+        mnuCuenta.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
+        mnuCuenta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mnuCuenta.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        mnuCuenta.setPreferredSize(new java.awt.Dimension(70, 32));
+        mnuCuenta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cuentaMouseClicked(evt);
+                mnuCuentaMouseClicked(evt);
             }
         });
-        menuBar.add(cuenta);
+        menuBar.add(mnuCuenta);
 
         mnuCerrarSesion1.setText("Cerrar sesion");
         mnuCerrarSesion1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mnuCerrarSesion1.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
         mnuCerrarSesion1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mnuCerrarSesion1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         mnuCerrarSesion1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -103,19 +107,20 @@ public class mdiUsuario extends javax.swing.JFrame {
         login.setVisible(true);
     }//GEN-LAST:event_mnuCerrarSesion1MouseClicked
 
-    private void fileMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fileMenuMouseClicked
+    private void mnuConsultaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuConsultaMouseClicked
         ifrmVehiculosUsuario vehiculo = new ifrmVehiculosUsuario();
         Escritorio.add(vehiculo);
-        vehiculo.show();
         vehiculo.toFront();
-    }//GEN-LAST:event_fileMenuMouseClicked
+        vehiculo.show();
+        
+    }//GEN-LAST:event_mnuConsultaMouseClicked
 
-    private void cuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cuentaMouseClicked
+    private void mnuCuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuCuentaMouseClicked
         ifrmCuentaUsuario info = new ifrmCuentaUsuario();
         Escritorio.add(info);
         info.show();
         info.toFront();      
-    }//GEN-LAST:event_cuentaMouseClicked
+    }//GEN-LAST:event_mnuCuentaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -154,11 +159,11 @@ public class mdiUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Escritorio;
-    private javax.swing.JMenu cuenta;
-    private javax.swing.JMenu editMenu;
-    private javax.swing.JMenu fileMenu;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu mnuCerrarSesion1;
+    private javax.swing.JMenu mnuConsulta;
+    private javax.swing.JMenu mnuCuenta;
+    private javax.swing.JMenu mnuReserva;
     // End of variables declaration//GEN-END:variables
 
 }

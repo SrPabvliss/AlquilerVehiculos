@@ -5,20 +5,21 @@
 package GUI;
 
 // ARREGLAR LA SELECCION DE SEXO Y QUE APAREZCA SOLAMENTE CUANDO SE APALSTE PERSONALIZADO Y NO ELEGIR MAS DE UNO
+import SQL.Usuario;
 import com.formdev.flatlaf.FlatLightLaf;
 import javax.swing.UIManager;
 
 public class frmRegistro extends javax.swing.JFrame {
 
-    /**
-     * Creates new form frmRegistro
-     */
+    Usuario us = new Usuario();
+    
     public frmRegistro() {
         initComponents();
         txtEscribirG.setVisible(false);
         
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -46,11 +47,8 @@ public class frmRegistro extends javax.swing.JFrame {
         lblEstadoCivil = new javax.swing.JLabel();
         lblFechaNacimiento = new javax.swing.JLabel();
         lblDia = new javax.swing.JLabel();
-        txtDia = new javax.swing.JTextField();
         lblMes = new javax.swing.JLabel();
-        txtMes = new javax.swing.JTextField();
         lblAnio = new javax.swing.JLabel();
-        txtAnio = new javax.swing.JTextField();
         lblDireccion = new javax.swing.JLabel();
         txtDireccion = new javax.swing.JTextField();
         lblFlecha = new javax.swing.JLabel();
@@ -61,6 +59,9 @@ public class frmRegistro extends javax.swing.JFrame {
         rbtHombre = new javax.swing.JRadioButton();
         Personalizado = new javax.swing.JRadioButton();
         txtEscribirG = new javax.swing.JTextField();
+        cmbDia = new javax.swing.JComboBox<>();
+        cmbMes = new javax.swing.JComboBox<>();
+        cmbAnio = new javax.swing.JComboBox<>();
 
         jTextField3.setPreferredSize(new java.awt.Dimension(150, 20));
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
@@ -164,39 +165,15 @@ public class frmRegistro extends javax.swing.JFrame {
 
         lblDia.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
         lblDia.setText("Dia:");
-        fondo.add(lblDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 236, -1, -1));
-
-        txtDia.setPreferredSize(new java.awt.Dimension(40, 30));
-        txtDia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDiaActionPerformed(evt);
-            }
-        });
-        fondo.add(txtDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 232, -1, -1));
+        fondo.add(lblDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, -1, -1));
 
         lblMes.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
         lblMes.setText("Mes:");
-        fondo.add(lblMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 236, -1, -1));
-
-        txtMes.setPreferredSize(new java.awt.Dimension(40, 30));
-        txtMes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMesActionPerformed(evt);
-            }
-        });
-        fondo.add(txtMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 232, -1, -1));
+        fondo.add(lblMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, -1, -1));
 
         lblAnio.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
         lblAnio.setText("Año:");
-        fondo.add(lblAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(521, 236, -1, -1));
-
-        txtAnio.setPreferredSize(new java.awt.Dimension(40, 30));
-        txtAnio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAnioActionPerformed(evt);
-            }
-        });
-        fondo.add(txtAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 232, -1, -1));
+        fondo.add(lblAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 230, -1, -1));
 
         lblDireccion.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
         lblDireccion.setText("Direccion:");
@@ -208,7 +185,7 @@ public class frmRegistro extends javax.swing.JFrame {
                 txtDireccionActionPerformed(evt);
             }
         });
-        fondo.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 170, -1));
+        fondo.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 200, -1));
 
         lblFlecha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblFlecha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-izquierda-círculo-60.png"))); // NOI18N
@@ -278,6 +255,18 @@ public class frmRegistro extends javax.swing.JFrame {
         });
         fondo.add(txtEscribirG, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 260, -1));
 
+        cmbDia.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
+        cmbDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        fondo.add(cmbDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 60, 20));
+
+        cmbMes.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
+        cmbMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+        fondo.add(cmbMes, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, -1, -1));
+
+        cmbAnio.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
+        cmbAnio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", "1939", "1938", "1937", "1936", "1935", "1934", "1933", "1932", "1931", "1930" }));
+        fondo.add(cmbAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, -1, -1));
+
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 700, 400));
 
         pack();
@@ -287,10 +276,6 @@ public class frmRegistro extends javax.swing.JFrame {
     private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDireccionActionPerformed
-
-    private void txtAnioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAnioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAnioActionPerformed
 
     private void txtCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaActionPerformed
         // TODO add your handling code here:
@@ -316,20 +301,19 @@ public class frmRegistro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSegundoApellidoActionPerformed
 
-    private void txtMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMesActionPerformed
-
-    private void txtDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDiaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDiaActionPerformed
-
     private void txtTelefono1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefono1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelefono1ActionPerformed
 
     private void lblRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lblRegistrarseActionPerformed
-        // TODO add your handling code here:
+      int conf = us.registro(txtPrimerNombre, txtSegundoNombre, txtPrimerApellido, txtSegundoApellido,txtTelefono1,txtCedula,txtDireccion);
+      us.almacenarBase(conf);
+      if (conf == 7) {
+        this.setVisible(false); 
+        mdiUsuario menuuser = new mdiUsuario ();
+        menuuser.setVisible(true);
+      }
+// TODO add your handling code here:
     }//GEN-LAST:event_lblRegistrarseActionPerformed
 
     private void lblFlechaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFlechaMouseClicked
@@ -395,6 +379,9 @@ public class frmRegistro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JRadioButton Personalizado;
+    private javax.swing.JComboBox<String> cmbAnio;
+    private javax.swing.JComboBox<String> cmbDia;
+    private javax.swing.JComboBox<String> cmbMes;
     public static javax.swing.JPanel fondo;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JTextField jTextField3;
@@ -416,12 +403,9 @@ public class frmRegistro extends javax.swing.JFrame {
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JRadioButton rbtHombre;
     private javax.swing.JRadioButton rbtMujer;
-    private javax.swing.JTextField txtAnio;
     private javax.swing.JTextField txtCedula;
-    private javax.swing.JTextField txtDia;
     private javax.swing.JTextField txtDireccion;
     public static javax.swing.JTextField txtEscribirG;
-    private javax.swing.JTextField txtMes;
     private javax.swing.JTextField txtPrimerApellido;
     private javax.swing.JTextField txtPrimerNombre;
     private javax.swing.JTextField txtSegundoApellido;

@@ -1,21 +1,24 @@
+package GUI;
+
+
+import SQL.Administrador;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-package GUI;
-
-import SQL.Usuario;
 
 /**
  *
- * @author Det-Pc
+ * @author sebas
  */
-public class ifrmVehiculosUsuario extends javax.swing.JInternalFrame {
-
-    Usuario user = new Usuario();
-    public ifrmVehiculosUsuario() {
+public class ifrmConsultarVehiculos extends javax.swing.JInternalFrame {
+Administrador admin = new Administrador();
+    /**
+     * Creates new form ifrmVehiculosAdmin
+     */
+    public ifrmConsultarVehiculos() {
         initComponents();
-        user.completarTabla(tblCocheU, "Marca", "");
     }
 
     /**
@@ -33,26 +36,21 @@ public class ifrmVehiculosUsuario extends javax.swing.JInternalFrame {
         cmbFiltro = new javax.swing.JComboBox<>();
         txtFiltro = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
-        tblCocheU = new javax.swing.JTable();
+        tblCocheA = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
 
         setBorder(null);
         setClosable(true);
-        setPreferredSize(new java.awt.Dimension(864, 500));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setPreferredSize(new java.awt.Dimension(840, 468));
 
         jLabel1.setFont(new java.awt.Font("Lucida Fax", 1, 24)); // NOI18N
         jLabel1.setText("Vehiculo disponibles");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Lucida Fax", 0, 18)); // NOI18N
         jLabel2.setText("Busqueda personalizada:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
 
         jLabel3.setText("Filtrar por");
         jLabel3.setPreferredSize(new java.awt.Dimension(60, 20));
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         cmbFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Marca", "Color", "Precio", "Agencia" }));
         cmbFiltro.addItemListener(new java.awt.event.ItemListener() {
@@ -65,7 +63,6 @@ public class ifrmVehiculosUsuario extends javax.swing.JInternalFrame {
                 cmbFiltroActionPerformed(evt);
             }
         });
-        getContentPane().add(cmbFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 120, -1));
 
         txtFiltro.setBorder(null);
         txtFiltro.addActionListener(new java.awt.event.ActionListener() {
@@ -78,9 +75,8 @@ public class ifrmVehiculosUsuario extends javax.swing.JInternalFrame {
                 txtFiltroKeyReleased(evt);
             }
         });
-        getContentPane().add(txtFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 320, 20));
 
-        tblCocheU.setModel(new javax.swing.table.DefaultTableModel(
+        tblCocheA.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -106,15 +102,57 @@ public class ifrmVehiculosUsuario extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane4.setViewportView(tblCocheU);
+        jScrollPane4.setViewportView(tblCocheA);
 
-        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 810, 270));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 320, 20));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 822, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(260, 260, 260)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(10, 10, 10)
+                            .addComponent(cmbFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(10, 10, 10)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 460, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel1)
+                    .addGap(10, 10, 10)
+                    .addComponent(jLabel2)
+                    .addGap(18, 18, 18)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cmbFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(txtFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, 0)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
-        jButton1.setText("Reservar");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 430, -1, -1));
-
-        setBounds(60, 120, 867, 500);
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbFiltroItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbFiltroItemStateChanged
@@ -122,8 +160,12 @@ public class ifrmVehiculosUsuario extends javax.swing.JInternalFrame {
         if (((String)cmbFiltro.getSelectedItem()).equals("Agencia")) {
             busqueda = "agencia.NOMBRE";
         }
-        user.completarTabla(tblCocheU, busqueda, "");
+        admin.completarTabla(tblCocheA, busqueda, "");
     }//GEN-LAST:event_cmbFiltroItemStateChanged
+
+    private void cmbFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbFiltroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbFiltroActionPerformed
 
     private void txtFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFiltroActionPerformed
         // TODO add your handling code here:
@@ -134,23 +176,18 @@ public class ifrmVehiculosUsuario extends javax.swing.JInternalFrame {
         if (((String)cmbFiltro.getSelectedItem()).equals("Agencia")) {
             busqueda = "agencia.NOMBRE";
         }
-        user.completarTabla(tblCocheU, busqueda, txtFiltro.getText());
+        admin.completarTabla(tblCocheA, busqueda, txtFiltro.getText());
     }//GEN-LAST:event_txtFiltroKeyReleased
-
-    private void cmbFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbFiltroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbFiltroActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbFiltro;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable tblCocheU;
+    private javax.swing.JTable tblCocheA;
     private javax.swing.JTextField txtFiltro;
     // End of variables declaration//GEN-END:variables
 }

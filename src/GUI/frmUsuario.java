@@ -120,20 +120,20 @@ public class frmUsuario extends javax.swing.JFrame {
              
         mdiUsuario menuUsuario = new mdiUsuario();
         
-        try {
+       try {
             String usuario = txtNombre.getText();
             String psswd = String.valueOf(txtPasswd.getPassword());
             int resultado = user.validarAcceso(usuario, psswd);
             
             if (resultado == 1) {
-                this.setVisible(false);
-                menuUsuario.setVisible(true);
-                System.out.println(psswd);
-                UsuarioDatos.cedula = psswd;
-            } else {
-                JOptionPane.showMessageDialog(null, "Error al iniciar sesion, vuelva a intentarlo");
-            }
-        } catch (NumberFormatException ex) {
+              this.setVisible(false);
+               menuUsuario.setVisible(true);
+              System.out.println(psswd);
+              UsuarioDatos.cedula = psswd;
+         } else {
+               JOptionPane.showMessageDialog(null, "Error al iniciar sesion, vuelva a intentarlo");
+           }
+       } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "Error, asegurate de ingresar los datos correctos");
         }   
     }//GEN-LAST:event_btnIngresarActionPerformed

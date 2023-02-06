@@ -15,6 +15,7 @@ public class frmAgencia extends javax.swing.JFrame {
      */
     public frmAgencia() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -29,12 +30,13 @@ public class frmAgencia extends javax.swing.JFrame {
         fondo = new javax.swing.JPanel();
         lblAgencias = new javax.swing.JLabel();
         lblSelecciona = new javax.swing.JLabel();
-        lblAdmin = new javax.swing.JLabel();
-        lblUser = new javax.swing.JLabel();
-        lblInvitado = new javax.swing.JLabel();
+        lblAgenciaNorte = new javax.swing.JLabel();
+        lblAgenciaSur = new javax.swing.JLabel();
+        lblAgenciaCentro = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        lblFlecha = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,32 +53,37 @@ public class frmAgencia extends javax.swing.JFrame {
         lblSelecciona.setText("Selecciona una opción:");
         fondo.add(lblSelecciona, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 60, -1, -1));
 
-        lblAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-configuración-del-administrador-96.png"))); // NOI18N
-        lblAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblAgenciaNorte.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAgenciaNorte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-configuración-del-administrador-96.png"))); // NOI18N
+        lblAgenciaNorte.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblAgenciaNorte.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblAdminMouseClicked(evt);
+                lblAgenciaNorteMouseClicked(evt);
             }
         });
-        fondo.add(lblAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 93, 112, 116));
+        fondo.add(lblAgenciaNorte, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 93, 112, 116));
 
-        lblUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-usuario-90.png"))); // NOI18N
-        lblUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblUser.setPreferredSize(new java.awt.Dimension(96, 96));
-        lblUser.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblAgenciaSur.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAgenciaSur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-usuario-90.png"))); // NOI18N
+        lblAgenciaSur.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblAgenciaSur.setPreferredSize(new java.awt.Dimension(96, 96));
+        lblAgenciaSur.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblUserMouseClicked(evt);
+                lblAgenciaSurMouseClicked(evt);
             }
         });
-        fondo.add(lblUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 93, 113, 116));
+        fondo.add(lblAgenciaSur, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 93, 113, 116));
 
-        lblInvitado.setFont(new java.awt.Font("Lucida Fax", 1, 18)); // NOI18N
-        lblInvitado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblInvitado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-invitado-masculino-96.png"))); // NOI18N
-        lblInvitado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        fondo.add(lblInvitado, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 93, 113, 116));
+        lblAgenciaCentro.setFont(new java.awt.Font("Lucida Fax", 1, 18)); // NOI18N
+        lblAgenciaCentro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAgenciaCentro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-invitado-masculino-96.png"))); // NOI18N
+        lblAgenciaCentro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblAgenciaCentro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAgenciaCentroMouseClicked(evt);
+            }
+        });
+        fondo.add(lblAgenciaCentro, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 93, 113, 116));
 
         jLabel4.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -92,6 +99,16 @@ public class frmAgencia extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Agencia centro");
         fondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 221, 113, -1));
+
+        lblFlecha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFlecha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8-izquierda-círculo-60.png"))); // NOI18N
+        lblFlecha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblFlecha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblFlechaMouseClicked(evt);
+            }
+        });
+        fondo.add(lblFlecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,17 +128,23 @@ public class frmAgencia extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lblAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAdminMouseClicked
-        this.setVisible(false);
-        frmAdministrador admin = new frmAdministrador();
-        admin.setVisible(true);
-    }//GEN-LAST:event_lblAdminMouseClicked
+    private void lblAgenciaNorteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgenciaNorteMouseClicked
+        
+    }//GEN-LAST:event_lblAgenciaNorteMouseClicked
 
-    private void lblUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUserMouseClicked
+    private void lblAgenciaSurMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgenciaSurMouseClicked
+        
+    }//GEN-LAST:event_lblAgenciaSurMouseClicked
+
+    private void lblFlechaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFlechaMouseClicked
         this.setVisible(false);
-        frmUsuario user = new frmUsuario();
-        user.setVisible(true);
-    }//GEN-LAST:event_lblUserMouseClicked
+        frmEleccionAdmin ad = new frmEleccionAdmin();
+        ad.setVisible(true);
+    }//GEN-LAST:event_lblFlechaMouseClicked
+
+    private void lblAgenciaCentroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAgenciaCentroMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblAgenciaCentroMouseClicked
 
     /**
      * @param args the command line arguments
@@ -163,10 +186,11 @@ public class frmAgencia extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel lblAdmin;
+    private javax.swing.JLabel lblAgenciaCentro;
+    private javax.swing.JLabel lblAgenciaNorte;
+    private javax.swing.JLabel lblAgenciaSur;
     private javax.swing.JLabel lblAgencias;
-    private javax.swing.JLabel lblInvitado;
+    private javax.swing.JLabel lblFlecha;
     private javax.swing.JLabel lblSelecciona;
-    private javax.swing.JLabel lblUser;
     // End of variables declaration//GEN-END:variables
 }

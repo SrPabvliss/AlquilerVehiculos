@@ -30,12 +30,11 @@ public class mdiInvitado extends javax.swing.JFrame {
 
         Escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        menuMostrar = new javax.swing.JMenu();
-        btnCerrar = new javax.swing.JMenu();
+        mnuMostrar = new javax.swing.JMenu();
+        mnuCerrar2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1000, 800));
         setResizable(false);
 
         javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
@@ -51,28 +50,30 @@ public class mdiInvitado extends javax.swing.JFrame {
 
         jMenuBar1.setPreferredSize(new java.awt.Dimension(195, 40));
 
-        menuMostrar.setText("Mostrar Vehiculos");
-        menuMostrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        menuMostrar.addMouseListener(new java.awt.event.MouseAdapter() {
+        mnuMostrar.setText("Mostrar Vehiculos");
+        mnuMostrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mnuMostrar.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
+        mnuMostrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuMostrarMouseClicked(evt);
+                mnuMostrarMouseClicked(evt);
             }
         });
-        menuMostrar.addActionListener(new java.awt.event.ActionListener() {
+        mnuMostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuMostrarActionPerformed(evt);
+                mnuMostrarActionPerformed(evt);
             }
         });
-        jMenuBar1.add(menuMostrar);
+        jMenuBar1.add(mnuMostrar);
 
-        btnCerrar.setText("Cerrar sesion");
-        btnCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+        mnuCerrar2.setText("Cerrar sesion");
+        mnuCerrar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mnuCerrar2.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
+        mnuCerrar2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCerrarMouseClicked(evt);
+                mnuCerrar2MouseClicked(evt);
             }
         });
-        jMenuBar1.add(btnCerrar);
+        jMenuBar1.add(mnuCerrar2);
 
         setJMenuBar(jMenuBar1);
 
@@ -91,28 +92,28 @@ public class mdiInvitado extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseClicked
+    private void mnuCerrar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuCerrar2MouseClicked
         this.setVisible(false);
         frmLogin login = new frmLogin();
         login.setVisible(true);
-    }//GEN-LAST:event_btnCerrarMouseClicked
+    }//GEN-LAST:event_mnuCerrar2MouseClicked
 
-    private void menuMostrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMostrarMouseClicked
+    private void mnuMostrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuMostrarMouseClicked
         ifrmMostrarVehiculos vehiculo = new ifrmMostrarVehiculos();
         Escritorio.add(vehiculo);
         vehiculo.show();
         vehiculo.toFront();
 
-    }//GEN-LAST:event_menuMostrarMouseClicked
+    }//GEN-LAST:event_mnuMostrarMouseClicked
 
-    private void menuMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuMostrarActionPerformed
+    private void mnuMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuMostrarActionPerformed
         ifrmMostrarVehiculos vehiculo = new ifrmMostrarVehiculos();
         Escritorio.add(vehiculo);
         vehiculo.show();
         vehiculo.toFront();
 
 
-    }//GEN-LAST:event_menuMostrarActionPerformed
+    }//GEN-LAST:event_mnuMostrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,8 +152,8 @@ public class mdiInvitado extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Escritorio;
-    private javax.swing.JMenu btnCerrar;
     private javax.swing.JMenuBar jMenuBar1;
-    public javax.swing.JMenu menuMostrar;
+    private javax.swing.JMenu mnuCerrar2;
+    public javax.swing.JMenu mnuMostrar;
     // End of variables declaration//GEN-END:variables
 }

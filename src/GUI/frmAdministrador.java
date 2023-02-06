@@ -114,7 +114,7 @@ public class frmAdministrador extends javax.swing.JFrame {
                 if (contrasena.equals(contr)) {
                     System.out.println("Ingreso correcto");
                  this.setVisible(false);
-                 mdiAdministrador adm = new mdiAdministrador();
+                 frmEleccionAdmin adm = new frmEleccionAdmin();
                  adm.toFront();
                  adm.show();    
                 }else
@@ -126,7 +126,7 @@ public class frmAdministrador extends javax.swing.JFrame {
                 if (contrasena.equals(contr)) {
                     System.out.println("Ingreso correcto");
                  this.setVisible(false);
-                 mdiAdministrador adm = new mdiAdministrador();
+                 frmEleccionAdmin adm = new frmEleccionAdmin();
                  adm.toFront();
                  adm.show();    
                 }else
@@ -139,7 +139,7 @@ public class frmAdministrador extends javax.swing.JFrame {
                 if (contrasena.equals(contr)) {
                     System.out.println("Ingreso correcto");
                  this.setVisible(false);
-                 mdiAdministrador adm = new mdiAdministrador();
+                 frmEleccionAdmin adm = new frmEleccionAdmin();
                  adm.toFront();
                  adm.show();    
                 }else

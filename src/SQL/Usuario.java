@@ -7,6 +7,7 @@ package SQL;
 import GUI.frmLogin;
 import GUI.frmUsuario;
 import GUI.mdiUsuario;
+import java.awt.Color;
 import java.sql.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,10 +15,15 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.border.Border;
+import javax.swing.BorderFactory;
+
 
 /**
  *
@@ -28,8 +34,11 @@ public class Usuario {
     Conexion conn = new Conexion();
     Connection con = conn.conection();
     int ci;
-
-    public int validarAcceso(String usuario, int passwd) {
+    
+    Border border1 = BorderFactory.createLineBorder(Color.RED, 2);
+    Border border2 = BorderFactory.createLineBorder(Color.BLACK, 1);
+    
+    public int validarAcceso(String usuario, String passwd) {
 
         int resultado = 0;
         try {
@@ -87,7 +96,7 @@ public class Usuario {
 
 
     public void Consultar(JTextField txtNombre, JTextField txtApellido, JTextField txtTelefono, JTextField txtDireccion, JTextField txtFechaNacimiento, 
-            JTextField txtCedula,JTextField txtEstado,JTextField txtNacionalidad,JTextField txtSexo, int cedula) {
+            JTextField txtCedula,JTextField txtEstado,JTextField txtNacionalidad,JTextField txtSexo, String cedula) {
         try {
             ResultSet rs;
             Statement leer = con.createStatement();
@@ -124,6 +133,86 @@ public class Usuario {
     return this.ci;
     }
     
+    
+    public int registro (JTextField nombre1, JTextField nombre2, JTextField apellido1, JTextField apellido2,JTextField numero, JTextField cedula, JTextField direccion){
+    String comparacion = "^[a-zA-Z\u00E0-\u00FC ]+$";
+    String cef = "^[0-9]{10}+$";
+    int cont = 0;
+    Pattern patron1 = Pattern.compile(comparacion);
+    Matcher ma = patron1.matcher(nombre1.getText());
+        if (!ma.find()) {
+        nombre1.setBorder(border1);
+        }else {
+        cont++;    
+        nombre1.setBorder(border2);}
+    
+    Pattern patron2 = Pattern.compile(comparacion);
+    Matcher ma2 = patron2.matcher(nombre2.getText());
+        if (!ma2.find()) {
+        nombre2.setBorder(border1);
+        }else {
+        cont++;
+        nombre2.setBorder(border2);}
+    
+    Pattern patron3 = Pattern.compile(comparacion);
+    Matcher ma3 = patron3.matcher(apellido1.getText());
+        if (!ma3.find()) {
+        apellido1.setBorder(border1);
+        
+        }else {
+        cont++;
+        apellido1.setBorder(border2);}
+        
+    Pattern patron4 = Pattern.compile(comparacion);
+    Matcher ma4 = patron4.matcher(apellido2.getText());
+        if (!ma4.find()) {
+        apellido2.setBorder(border1);
+        }else {
+        cont++;
+        apellido2.setBorder(border2);}
+        
+    Pattern patron5 = Pattern.compile(cef);
+    Matcher ma5 = patron5.matcher(numero.getText());
+        if (!ma5.find()) {
+        numero.setBorder(border1);
+        }else {
+        cont++;
+        numero.setBorder(border2);}
+        
+        
+        Pattern patron6 = Pattern.compile(cef);
+    Matcher ma6 = patron6.matcher(cedula.getText());
+        if (!ma6.find()) {
+        cedula.setBorder(border1);
+        }else {
+        cont++;
+        cedula.setBorder(border2);}
+        
+        
+     Pattern patron7 = Pattern.compile(comparacion);
+    Matcher ma7 = patron7.matcher(direccion.getText());
+        if (!ma7.find()) {
+        direccion.setBorder(border1);
+        }else {
+        cont++;
+        direccion.setBorder(border2);}
+        
+    return cont;
+    }
+    
+    
+    public void almacenarBase (int contador){ //Metodo para agregar lo que se tiene del registro a la base de datos
+        
+        if (contador == 7) {
+            
+            JOptionPane.showMessageDialog(null, "Ha sido registrado con exito");
+            System.out.println("Se ha ingresado los datos en la base ");
+        }else {
+            System.out.println("No se han ingresado los datos en la base");
+         }
+    }
+   
+    
+    }
 
 
-}
