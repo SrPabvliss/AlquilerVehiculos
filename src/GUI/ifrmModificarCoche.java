@@ -3,19 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package GUI;
- 
+
 import SQL.Administrador;
 
 /**
  *
  * @author sebas
  */
-public class ifrmAgregarCoche extends javax.swing.JInternalFrame {
- Administrador admin = new Administrador ();
+public class ifrmModificarCoche extends javax.swing.JInternalFrame {
+Administrador admin3 = new Administrador();
     /**
-     * Creates new form ifrmAgregar
+     * Creates new form ifrmModificarCoche
      */
-    public ifrmAgregarCoche() {
+    public ifrmModificarCoche() {
         initComponents();
     }
 
@@ -28,26 +28,29 @@ public class ifrmAgregarCoche extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtMarca = new javax.swing.JTextField();
+        txtIdAgencia = new javax.swing.JTextField();
+        lblColor = new javax.swing.JLabel();
         txtAnio = new javax.swing.JTextField();
-        txtColorin = new javax.swing.JTextField();
         lblIdAgencia = new javax.swing.JLabel();
-        lblModelo = new javax.swing.JLabel();
         txtPrecio = new javax.swing.JTextField();
-        txtIdGarage = new javax.swing.JTextField();
         lblAnio = new javax.swing.JLabel();
-        lblMarca = new javax.swing.JLabel();
         lblPrecio = new javax.swing.JLabel();
+        btnActualizar = new javax.swing.JButton();
         lblIdGarage = new javax.swing.JLabel();
         lblMatricula = new javax.swing.JLabel();
         txtMatricula = new javax.swing.JTextField();
-        txtIdAgencia = new javax.swing.JTextField();
         txtModelo = new javax.swing.JTextField();
-        lblColor = new javax.swing.JLabel();
-        btnAgreg = new javax.swing.JButton();
+        txtMarca = new javax.swing.JTextField();
+        txtColor = new javax.swing.JTextField();
+        lblModelo = new javax.swing.JLabel();
+        txtIdGarage = new javax.swing.JTextField();
+        lblMarca = new javax.swing.JLabel();
+        btnConsultar = new javax.swing.JButton();
 
         setClosable(true);
-        setPreferredSize(new java.awt.Dimension(459, 603));
+
+        lblColor.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
+        lblColor.setText("Color:");
 
         txtAnio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,26 +58,27 @@ public class ifrmAgregarCoche extends javax.swing.JInternalFrame {
             }
         });
 
-        txtColorin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtColorinActionPerformed(evt);
-            }
-        });
-
         lblIdAgencia.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
         lblIdAgencia.setText("Id Agencia:");
-
-        lblModelo.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
-        lblModelo.setText("Modelo:");
 
         lblAnio.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
         lblAnio.setText("Año:");
 
-        lblMarca.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
-        lblMarca.setText("Marca:");
-
         lblPrecio.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
         lblPrecio.setText("Precio:");
+
+        btnActualizar.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        btnActualizar.setText("Actualizar");
+        btnActualizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnActualizarMouseClicked(evt);
+            }
+        });
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
 
         lblIdGarage.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
         lblIdGarage.setText("Id Garage:");
@@ -88,14 +92,23 @@ public class ifrmAgregarCoche extends javax.swing.JInternalFrame {
             }
         });
 
-        lblColor.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
-        lblColor.setText("Color:");
+        txtColor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtColorActionPerformed(evt);
+            }
+        });
 
-        btnAgreg.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
-        btnAgreg.setText("Agregar");
-        btnAgreg.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblModelo.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
+        lblModelo.setText("Modelo:");
+
+        lblMarca.setFont(new java.awt.Font("Lucida Fax", 0, 12)); // NOI18N
+        lblMarca.setText("Marca:");
+
+        btnConsultar.setFont(new java.awt.Font("Lucida Fax", 1, 12)); // NOI18N
+        btnConsultar.setText("Consultar");
+        btnConsultar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnAgregMouseClicked(evt);
+                btnConsultarMouseClicked(evt);
             }
         });
 
@@ -125,16 +138,18 @@ public class ifrmAgregarCoche extends javax.swing.JInternalFrame {
                             .addComponent(txtMatricula, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
                             .addComponent(txtMarca)
                             .addComponent(txtModelo)
-                            .addComponent(txtColorin)
-                            .addComponent(txtAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtColor)
                             .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(txtIdAgencia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
                                 .addComponent(txtIdGarage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(176, 176, 176)
-                        .addComponent(btnAgreg)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                        .addGap(62, 62, 62)
+                        .addComponent(btnConsultar)
+                        .addGap(88, 88, 88)
+                        .addComponent(btnActualizar)))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +174,7 @@ public class ifrmAgregarCoche extends javax.swing.JInternalFrame {
                         .addGap(12, 12, 12)
                         .addComponent(txtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12)
-                        .addComponent(txtColorin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtIdGarage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -174,33 +189,44 @@ public class ifrmAgregarCoche extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblPrecio)
                     .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                .addComponent(btnAgreg)
-                .addGap(57, 57, 57))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnConsultar)
+                    .addComponent(btnActualizar))
+                .addGap(32, 32, 32))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtAnioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAnioActionPerformed
+    private void txtColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtColorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAnioActionPerformed
-
-    private void txtColorinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtColorinActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtColorinActionPerformed
+    }//GEN-LAST:event_txtColorActionPerformed
 
     private void txtModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtModeloActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtModeloActionPerformed
 
-    private void btnAgregMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregMouseClicked
-      admin.agregarVehiculo(txtMatricula, txtIdAgencia, txtIdGarage, txtModelo, txtColorin, txtAnio, txtMarca, txtPrecio);        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAgregMouseClicked
+    private void txtAnioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAnioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAnioActionPerformed
+
+    private void btnActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarMouseClicked
+          admin3.actualizarCoche(txtMatricula, txtIdAgencia, txtIdGarage, txtModelo, txtColor, txtAnio, txtMarca, txtPrecio); // TODO add your handling code here:
+    }//GEN-LAST:event_btnActualizarMouseClicked
+
+    private void btnConsultarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultarMouseClicked
+        admin3.consultarVehiculo(txtMatricula, txtIdAgencia, txtIdGarage, txtModelo, txtColor, txtAnio, txtMarca, txtPrecio);// TODO add your handling code here:
+    }//GEN-LAST:event_btnConsultarMouseClicked
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+              // TODO add your handling code here:
+    }//GEN-LAST:event_btnActualizarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgreg;
+    private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnConsultar;
     private javax.swing.JLabel lblAnio;
     private javax.swing.JLabel lblColor;
     private javax.swing.JLabel lblIdAgencia;
@@ -211,8 +237,6 @@ public class ifrmAgregarCoche extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblPrecio;
     private javax.swing.JTextField txtAnio;
     private javax.swing.JTextField txtColor;
-    private javax.swing.JTextField txtColor1;
-    private javax.swing.JTextField txtColorin;
     private javax.swing.JTextField txtIdAgencia;
     private javax.swing.JTextField txtIdGarage;
     private javax.swing.JTextField txtMarca;

@@ -4,6 +4,8 @@
  */
 package GUI;
 
+import java.awt.Dimension;
+
 /**
  *
  * @author sebas
@@ -13,6 +15,7 @@ public class mdiAdministradorCoche extends javax.swing.JFrame {
     /**
      * Creates new form mdiAdministrador
      */
+    
     public mdiAdministradorCoche() {
         initComponents();
         setLocationRelativeTo(null);
@@ -184,6 +187,9 @@ public class mdiAdministradorCoche extends javax.swing.JFrame {
         
         ifrmConsultarVehiculos   vehiculo1 = new ifrmConsultarVehiculos();
         Escritorio.add(vehiculo1);
+        Dimension escritor = Escritorio.getSize();
+        Dimension frame = vehiculo1.getSize();
+        vehiculo1.setLocation((escritor.width - frame.width)/2, (escritor.height - frame.height)/2);
         vehiculo1.show();
         vehiculo1.toFront();
     }//GEN-LAST:event_mnuConsulta2MouseClicked
@@ -191,6 +197,9 @@ public class mdiAdministradorCoche extends javax.swing.JFrame {
     private void mnuAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuAgregarMouseClicked
        ifrmAgregarCoche agregar = new ifrmAgregarCoche();     
        Escritorio.add(agregar);
+       Dimension escritor = Escritorio.getSize();
+        Dimension frame = agregar.getSize();
+        agregar.setLocation((escritor.width - frame.width)/2, (escritor.height - frame.height)/2);
        agregar.toFront();
        agregar.show();
  
@@ -209,7 +218,22 @@ public class mdiAdministradorCoche extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuConsulta2ActionPerformed
 
     private void mnuActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuActualizarMouseClicked
-        // TODO add your handling code here:
+        
+        
+        
+        ifrmModificarCoche mdrc = new ifrmModificarCoche();
+        Escritorio.add(mdrc);
+        Dimension escritor = Escritorio.getSize();
+        Dimension frame = mdrc.getSize();
+        mdrc.setLocation((escritor.width - frame.width)/2, (escritor.height - frame.height)/2);
+        mdrc.show();
+        mdrc.toFront();  
+        
+        
+        
+        
+         
+// TODO add your handling code here:
     }//GEN-LAST:event_mnuActualizarMouseClicked
 
     /**

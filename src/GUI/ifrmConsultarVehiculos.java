@@ -157,6 +157,7 @@ Administrador admin = new Administrador();
         if (((String)cmbFiltro.getSelectedItem()).equals("Agencia")) {
             busqueda = "agencia.NOMBRE";
         }
+        
         admin.completarTabla(tblCocheA, busqueda, "");
     }//GEN-LAST:event_cmbFiltroItemStateChanged
 

@@ -156,7 +156,9 @@ public class ifrmConsultarCliente extends javax.swing.JInternalFrame {
 
     private void cmbFiltroItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbFiltroItemStateChanged
         String busqueda = (String)cmbFiltro.getSelectedItem();
-        
+        if (((String)cmbFiltro.getSelectedItem()).equals("Cedula")) {
+            busqueda = "CI";
+        }
         ad.completarCliente(tblClientes, busqueda, "");
     }//GEN-LAST:event_cmbFiltroItemStateChanged
 
@@ -164,13 +166,16 @@ public class ifrmConsultarCliente extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbFiltroActionPerformed
 
+    
     private void txtFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFiltroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFiltroActionPerformed
 
     private void txtFiltroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFiltroKeyReleased
         String busqueda = (String)cmbFiltro.getSelectedItem();
-        
+        if (((String)cmbFiltro.getSelectedItem()).equals("Cedula")) {
+            busqueda = "CI";
+        }
         ad.completarCliente(tblClientes, busqueda, txtFiltro.getText());
     }//GEN-LAST:event_txtFiltroKeyReleased
 

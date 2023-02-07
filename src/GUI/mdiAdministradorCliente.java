@@ -4,6 +4,8 @@
  */
 package GUI;
 
+import java.awt.Dimension;
+
 /**
  *
  * @author sebas
@@ -114,17 +116,30 @@ public class mdiAdministradorCliente extends javax.swing.JFrame {
        
         ifrmAgregarCliente agregar = new ifrmAgregarCliente();     
        Escritorio1.add(agregar);
+       Dimension escritor = Escritorio1.getSize();
+        Dimension frame = agregar.getSize();
+        agregar.setLocation((escritor.width - frame.width)/2, (escritor.height - frame.height)/2);
        agregar.toFront();
        agregar.show(); // TODO add your handling code here:
     }//GEN-LAST:event_mnuAgrMouseClicked
 
     private void mnuActMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuActMouseClicked
-        // TODO add your handling code here:
+       ifrmModificarCliente mcl = new ifrmModificarCliente();
+        Escritorio1.add(mcl);
+        Dimension escritor = Escritorio1.getSize();
+        Dimension frame = mcl.getSize();
+        mcl.setLocation((escritor.width - frame.width)/2, (escritor.height - frame.height)/2);
+        mcl.show();
+        mcl.toFront();// TODO add your handling code here:
     }//GEN-LAST:event_mnuActMouseClicked
 
+    
     private void mnuConsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuConsMouseClicked
        ifrmConsultarCliente   cliente1 = new ifrmConsultarCliente();
         Escritorio1.add(cliente1);
+        Dimension escritor = Escritorio1.getSize();
+        Dimension frame = cliente1.getSize();
+        cliente1.setLocation((escritor.width - frame.width)/2, (escritor.height - frame.height)/2);
         cliente1.show();
         cliente1.toFront();  // TODO add your handling code here:
     }//GEN-LAST:event_mnuConsMouseClicked
