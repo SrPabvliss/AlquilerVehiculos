@@ -5,6 +5,7 @@
 package GUI;
 
 import SQL.Usuario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,6 +14,7 @@ import SQL.Usuario;
 public class ifrmVehiculosUsuario extends javax.swing.JInternalFrame {
 
     Usuario user = new Usuario();
+
     public ifrmVehiculosUsuario() {
         initComponents();
         user.completarTabla(tblCocheU, "Marca", "");
@@ -35,7 +37,9 @@ public class ifrmVehiculosUsuario extends javax.swing.JInternalFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         tblCocheU = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
+        btnReservar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        txtSeleccion = new javax.swing.JTextField();
 
         setBorder(null);
         setClosable(true);
@@ -95,7 +99,7 @@ public class ifrmVehiculosUsuario extends javax.swing.JInternalFrame {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, true, true
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -106,20 +110,40 @@ public class ifrmVehiculosUsuario extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
+        tblCocheU.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblCocheUMouseClicked(evt);
+            }
+        });
         jScrollPane4.setViewportView(tblCocheU);
 
         getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 810, 270));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 320, 20));
 
-        jButton1.setText("Reservar");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 430, -1, -1));
+        btnReservar.setText("Reservar");
+        btnReservar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnReservar.setEnabled(false);
+        btnReservar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnReservarMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btnReservar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 430, 140, -1));
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Vehiculo seleccionado:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, 20));
+
+        txtSeleccion.setEditable(false);
+        txtSeleccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(txtSeleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 490, -1));
 
         setBounds(60, 120, 867, 500);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbFiltroItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbFiltroItemStateChanged
-        String busqueda = (String)cmbFiltro.getSelectedItem();
-        if (((String)cmbFiltro.getSelectedItem()).equals("Agencia")) {
+        String busqueda = (String) cmbFiltro.getSelectedItem();
+        if (((String) cmbFiltro.getSelectedItem()).equals("Agencia")) {
             busqueda = "agencia.NOMBRE";
         }
         user.completarTabla(tblCocheU, busqueda, "");
@@ -130,8 +154,8 @@ public class ifrmVehiculosUsuario extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtFiltroActionPerformed
 
     private void txtFiltroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFiltroKeyReleased
-        String busqueda = (String)cmbFiltro.getSelectedItem();
-        if (((String)cmbFiltro.getSelectedItem()).equals("Agencia")) {
+        String busqueda = (String) cmbFiltro.getSelectedItem();
+        if (((String) cmbFiltro.getSelectedItem()).equals("Agencia")) {
             busqueda = "agencia.NOMBRE";
         }
         user.completarTabla(tblCocheU, busqueda, txtFiltro.getText());
@@ -141,16 +165,35 @@ public class ifrmVehiculosUsuario extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbFiltroActionPerformed
 
+    private void tblCocheUMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCocheUMouseClicked
+        int seleccionar = tblCocheU.rowAtPoint(evt.getPoint());
+        UsuarioDatos.matricula = (String.valueOf(tblCocheU.getValueAt(seleccionar, 3)));
+        txtSeleccion.setText(String.valueOf(tblCocheU.getValueAt(seleccionar, 0))+ " "+String.valueOf(tblCocheU.getValueAt(seleccionar, 1)));
+        btnReservar.setEnabled(true);
+        
+    }//GEN-LAST:event_tblCocheUMouseClicked
+
+    private void btnReservarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReservarMouseClicked
+        ifrmReservar reserva = new ifrmReservar();
+        mdiUsuario.Escritorio.add(reserva);
+        reserva.toFront();
+        reserva.show();
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_btnReservarMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnReservar;
     private javax.swing.JComboBox<String> cmbFiltro;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable tblCocheU;
     private javax.swing.JTextField txtFiltro;
+    private javax.swing.JTextField txtSeleccion;
     // End of variables declaration//GEN-END:variables
 }

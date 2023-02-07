@@ -3,6 +3,7 @@ package GUI;
 
 public class UsuarioDatos {
     static String cedula;
+    static String matricula;
 
     public String getCedula() {
         return cedula;

@@ -154,7 +154,7 @@ public class mdiUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane Escritorio;
+    public static javax.swing.JDesktopPane Escritorio;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu mnuCerrarSesion1;
     private javax.swing.JMenu mnuConsulta;
